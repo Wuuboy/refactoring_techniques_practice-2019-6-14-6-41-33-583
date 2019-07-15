@@ -1,5 +1,6 @@
 package com.tws.refactoring.extract_method;
 
+import com.tws.refactoring.extract_variable.PriceCalculator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,8 +25,12 @@ public class OwingPrinterTest {
     }
 
     @Test
-    public void printOwing() {
-//        System.out.print("hello");
-//        assertEquals("hello", outContent.toString());
+    public void should_return_price_when_new_PriceCaculator(){
+        //given
+        PriceCalculator priceCalculator = new PriceCalculator();
+        //when
+        double expectedPrice = priceCalculator.getPrice(10,10);
+        //then
+        assertEquals(10.0,expectedPrice);
     }
 }
